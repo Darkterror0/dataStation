@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{#<html lang="en" xmlns="http://www.w3.org/1999/html">#}
+<head>
+    <meta charset="UTF-8">
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% bootstrap_messages %}
+    <title>data_index</title>
+
+</head>
+<body>
+    <div class="getqiye">
+        <input action="" method="post" enctype="multipart/form-data">
+            <input type="file" name="myfile"></input>
+        </form>
+    </div>
+
+
+    <div class="bussniss">
+        <form action="form_bussniss">
+        <h2 class="for_bussniss_head">请选择需要调取的工商数据:</h2>
+           <script !src="{% bootstrap_jquery_url %}">
+        $("#quanxuan").click(function(){//给全选按钮加上点击事件
+        var xz = $(this).prop("checked");//判断全选按钮的选中状态
+        var ck = $(".qx").prop("checked",xz);  //让class名为qx的选项的选中状态和全选按钮的选中状态一致。
+        })
+            </script>
+        <input type="checkbox" id="quanxuan" />全选<br/>
+        <input type='checkbox' class="qx" type="submit">基本信息</input>
+        <input type='checkbox' class="qx" type="submit">董监高</input>
+        <input type='checkbox' class="qx" type="submit">股东</input>
+        <input type='checkbox' class="qx" type="submit">严重违法</input>
+        <input type='checkbox' class="qx" type="submit">经营异常</input>
+        <input type='checkbox' class="qx" type="submit">分支机构</input>
+        <input type='checkbox' class="qx" type="submit">对外投资</input>
+        <input type='checkbox' class="qx" type="submit">变更</input>
+        <input type='checkbox' class="qx" type="submit">行政处罚</input>
+        {% bootstrap_button "下载" button_type="submit" button_class="btn-primary" %}
+        {{ wronglyInput }}<br>
+        </form>
+
+    </div>
+
+    <div class="fayuan">
+        <form action="form_fayuan">
+        <h2 class="for_fayuan_head">请选择需要调取的法院数据:</h2>
+        <input type='checkbox' class="btn btn-default" type="submit">法院公告</input>
+        <input type='checkbox' class="btn btn-default" type="submit">失信 </input>
+        <input type='checkbox' class="btn btn-default" type="submit">开庭公告</input>
+        <input type='checkbox' class="btn btn-default" type="submit">欠税公告</input>
+        <input type='checkbox' class="btn btn-default" type="submit">信用中国</input>
+        <input type='checkbox' class="btn btn-default" type="submit">产品信息</input>
+        <input type='checkbox' class="btn btn-default" type="submit">被执行人</input>
+
+        {% bootstrap_button "下载" button_type="submit" button_class="btn-primary" %}
+            </form>
+
+    </div>
+
+</body>
+</html>
